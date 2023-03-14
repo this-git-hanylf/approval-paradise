@@ -1,0 +1,162 @@
+{
+  "project_info": {
+    "project_number": "408302101564",
+    "project_id": "pakubuwono-d270c",
+    "storage_bucket": "pakubuwono-d270c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408302101564:android:8dda3a0cdc83219bc8cf39",
+        "android_client_info": {
+          "package_name": "com.pakubuwono.approval"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRgugcJofa0ptzJM2Faj2BunP-WjXC1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "408302101564-k4cv3r24d9tdrdbj2fj0li5780bbi4vn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pakubuwono.residence"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408302101564:android:49f104cf7a221545c8cf39",
+        "android_client_info": {
+          "package_name": "com.pakubuwono.residence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408302101564-jahf42do46r3qq6mrv5d9e3com70e23t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pakubuwono.residence",
+            "certificate_hash": "89c0c3f50906cd13afa98f292ae2757c63f12edb"
+          }
+        },
+        {
+          "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRgugcJofa0ptzJM2Faj2BunP-WjXC1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "408302101564-k4cv3r24d9tdrdbj2fj0li5780bbi4vn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pakubuwono.residence"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408302101564:android:499cecfabb070553c8cf39",
+        "android_client_info": {
+          "package_name": "com.pakubuwonoresidence.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRgugcJofa0ptzJM2Faj2BunP-WjXC1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "408302101564-k4cv3r24d9tdrdbj2fj0li5780bbi4vn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pakubuwono.residence"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408302101564:android:839e6916c2356045c8cf39",
+        "android_client_info": {
+          "package_name": "com.pakubuwonoresidence.train"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRgugcJofa0ptzJM2Faj2BunP-WjXC1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408302101564-dtec0md15qo29jn4e49pqhol58lmr1lg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "408302101564-k4cv3r24d9tdrdbj2fj0li5780bbi4vn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pakubuwono.residence"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
