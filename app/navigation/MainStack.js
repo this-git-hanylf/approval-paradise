@@ -10,6 +10,8 @@ import {
 
 // Screens Declare Import
 import HomeScreen from '../screens/Home';
+import HistoryScreen from '../screens/History';
+import ProfileScreen from '../screens/Profile';
 import ContactScreen from '../screens/Contact';
 // import AboutUs from '../screens/About';
 import AboutScreen from '../screens/About';
@@ -33,8 +35,8 @@ export const WalletTabScreens = {
   //     headerShown: false,
   //   },
   // },
-  NotificationScreen: {
-    component: HomeScreen,
+  HistoryScreen: {
+    component: HistoryScreen,
     options: {
       title: 'History',
 
@@ -106,7 +108,7 @@ export const WalletTabScreens = {
     },
   },
   ProfileScreen: {
-    component: HomeScreen,
+    component: ProfileScreen,
     options: {
       title: 'Profile',
       tabBarIcon: ({focused, color}) =>
