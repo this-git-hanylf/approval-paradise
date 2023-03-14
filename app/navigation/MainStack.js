@@ -24,38 +24,75 @@ export const WalletMenu = () => (
 );
 
 export const WalletTabScreens = {
+  // HomeScreen: {
+  //   component: HomeScreen,
+  //   options: {
+  //     title: 'Home',
+  //     tabBarIcon: ({focused, color}) =>
+  //       tabBarIcon({focused, color, name: 'home'}),
+  //     headerShown: false,
+  //   },
+  // },
+  NotificationScreen: {
+    component: HomeScreen,
+    options: {
+      title: 'History',
+
+      tabBarIcon: ({focused, color}) =>
+        tabBarIcon({focused, color, name: 'history'}),
+    },
+  },
+  // AboutScreen: {
+  //   component: AboutScreen,
+  //   options: {
+  //     title: 'About',
+  //     tabBarIcon: ({focused, color}) =>
+  //       tabBarIcon({focused, color, name: 'building'}),
+  //     headerShown: false,
+  //     tabBarButton: (props, color) => (
+  //       <CustomTabBarButton
+  //         {...props}
+  //         bgColor={'#FFFFFF'}
+  //         name={'users'}
+  //         color={color}
+  //       />
+  //     ),
+  //     tabBarButton: ({props, color}) => {
+  //       return (
+  //         <CustomTabBarButton
+  //           bgColor={'#FFFFFF'}
+  //           name={'bell'}
+  //           color={color}
+  //           {...props}
+  //         />
+  //       );
+  //     },
+  //   },
+  // },
   HomeScreen: {
     component: HomeScreen,
     options: {
       title: 'Home',
-      tabBarIcon: ({focused, color}) =>
-        tabBarIcon({focused, color, name: 'home'}),
+      // tabBarIcon: ({focused, color}) =>
+      //   tabBarIcon({focused, color, name: 'home'}),
       headerShown: false,
-    },
-  },
-  ProfileScreen: {
-    component: HomeScreen,
-    options: {
-      title: 'Profile',
-      tabBarIcon: ({focused, color}) =>
-        tabBarIcon({focused, color, name: 'user'}),
-    },
-  },
-  AboutScreen: {
-    component: AboutScreen,
-    options: {
-      title: 'About',
-      tabBarIcon: ({focused, color}) =>
-        tabBarIcon({focused, color, name: 'building'}),
-      headerShown: false,
-      tabBarButton: (props, color) => (
-        <CustomTabBarButton
-          {...props}
-          bgColor={'#FFFFFF'}
-          name={'users'}
-          color={color}
-        />
-      ),
+      // tabBarButton: ({props, color}) => (
+      //   <CustomTabBarButton
+      //     {...props}
+      //     bgColor={'#FFFFFF'}
+      //     name={'home'}
+      //     color={color}
+      //   />
+      // ),
+      tabBarButton: ({onPress, props, color}) =>
+        CustomTabBarButton({
+          onPress,
+          props,
+          color,
+          // color: '#58D68D',
+          bgColor: '#FFFFFF',
+          name: 'home',
+        }),
       // tabBarButton: ({props, color}) => {
       //   return (
       //     <CustomTabBarButton
@@ -68,24 +105,23 @@ export const WalletTabScreens = {
       // },
     },
   },
-  NotificationScreen: {
+  ProfileScreen: {
     component: HomeScreen,
     options: {
-      title: 'Notification',
-
+      title: 'Profile',
       tabBarIcon: ({focused, color}) =>
-        tabBarIcon({focused, color, name: 'bell'}),
+        tabBarIcon({focused, color, name: 'user'}),
     },
   },
-  EmegerncyScreen: {
-    component: ContactScreen,
-    options: {
-      title: 'Contact',
-      headerShown: false,
-      tabBarIcon: ({focused, color}) =>
-        tabBarIcon({focused, color, name: 'phone'}),
-    },
-  },
+  // EmegerncyScreen: {
+  //   component: ContactScreen,
+  //   options: {
+  //     title: 'Contact',
+  //     headerShown: false,
+  //     tabBarIcon: ({focused, color}) =>
+  //       tabBarIcon({focused, color, name: 'phone'}),
+  //   },
+  // },
 
   //   ProfileScreen: {
   //     component: ProfileScreen,

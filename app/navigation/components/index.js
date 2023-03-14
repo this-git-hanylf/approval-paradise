@@ -17,14 +17,15 @@ import {TabBg} from './TabBg';
 import {Button} from '../../components';
 
 export const tabBarIcon = ({focused, color, name}) => (
+  // console.log('colorrr', color);
   //   console.log('name icon', name),
   //   (
   // (<FontAwesome5 name={'comments'} solid />)
   <Icon name={name} size={20} solid color={color} focused={focused} />
-
-  //   )
-  //   tesicon
 );
+
+//   )
+//   tesicon
 
 export const CustomTabBarButton = ({
   children,
@@ -35,11 +36,13 @@ export const CustomTabBarButton = ({
   //   component,
   props,
 }) => {
-  console.log('onpress', props);
+  console.log('onpress', onPress);
+  console.log('color', color);
   return (
     <View
       style={{position: 'relative', width: 75, alignItems: 'center'}}
-      pointerEvents="box-none">
+      pointerEvents="box-none"
+    >
       <TabBg color={bgColor} style={{position: 'absolute', top: 0}} />
 
       <TouchableOpacity
@@ -52,7 +55,8 @@ export const CustomTabBarButton = ({
           borderRadius: 27,
           backgroundColor: 'pink',
         }}
-        onPress={onPress}>
+        onPress={onPress}
+      >
         {tabBarIcon({color, name})}
       </TouchableOpacity>
     </View>
@@ -88,7 +92,8 @@ export const tabBarIconHaveNoty = ({color, name}) => {
           top: -5,
           right: -12,
           borderRadius: 10,
-        }}>
+        }}
+      >
         <Text whiteColor caption2>
           {/* {notifData_FromRed} */}
           {finalCount < 0 ? 0 : finalCount}
