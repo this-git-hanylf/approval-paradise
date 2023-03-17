@@ -188,14 +188,14 @@ export const DefaultTheme = {
     dark: false,
     colors: {
       // primary: '#068444',
-      primary: '#315447',
-      primaryDark: '#388E3C',
-      primaryLight: '#C8E6C9',
+      primary: '#007638',
+      primaryDark: '#013018',
+      primaryLight: '#02ba59',
       accent: '#607D8B',
-      background: 'white',
-      card: '#F5F5F5',
-      text: '#212121',
-      border: '#c7c7cc',
+      background: '#f2f2f2',
+      card: '#ffffff',
+      text: '#1c1c1e',
+      border: '#d8d8d8',
     },
   },
   dark: {
@@ -243,8 +243,8 @@ export const useTheme = () => {
   // console.log('theme storeage?', state.application);
   // const listTheme = ThemeSupport.filter(item => item.theme == themeStorage);
   // const theme = listTheme.length > 0 ? listTheme[0] : DefaultTheme;
-  // // if (forceDark) {
-  // return {theme: theme.dark, colors: theme.dark.colors};
+  // if (forceDark) {
+  //   return {theme: theme.dark, colors: theme.dark.colors};
   // }
   // if (forceDark == false) {
   //   return {theme: theme.light, colors: theme.light.colors};

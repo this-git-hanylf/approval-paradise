@@ -14,7 +14,8 @@ export default StyleSheet.create({
     // borderBottomLeftRadius: 40,
   },
   backgroundStyle: {
-    backgroundColor: '#D6CDA4',
+    backgroundColor: '#FFFFFF',
+    // backgroundColor: '#F7F7F7',
     height: '100%',
     width: '100%',
   },
@@ -33,7 +34,7 @@ export default StyleSheet.create({
   ...Platform.select({
     ios: {
       shadowProps: {
-        shadowColor: 'black',
+        shadowColor: '#007638',
         shadowOffset: {width: 5, height: 5},
         shadowOpacity: 0.25,
         shadowRadius: 3,
@@ -41,9 +42,22 @@ export default StyleSheet.create({
     },
     android: {
       shadowProps: {
-        elevation: 20,
-        shadowColor: 'black',
+        elevation: 30,
+        shadowColor: '#007638',
       },
     },
   }),
+  cardList: {
+    marginLeft: 70,
+    marginRight: 30,
+    marginVertical: 20,
+    // backgroundColor: '#F7F7F7',
+  },
+  thumb: {
+    width: 50,
+    height: 50,
+    borderRadius: 30,
+    marginRight: 10,
+    marginLeft: 15,
+  },
 });

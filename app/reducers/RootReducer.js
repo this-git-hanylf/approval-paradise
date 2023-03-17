@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 // import error from './ErrorReducer';
-import user from './UserReducer';
+import UserReducer from './UserReducer';
 // import status from './StatusReducer';
 import AuthReducer from './auth';
 import ApplicationReducer from './application';
@@ -12,7 +12,7 @@ import ApplicationReducer from './application';
 
 const rootReducer = combineReducers({
   //   error,
-  user,
+  user: UserReducer,
   //   status,
   auth: AuthReducer,
   application: ApplicationReducer,

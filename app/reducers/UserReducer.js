@@ -1,10 +1,14 @@
 import {actionTypes} from '../actions/UserActions';
 
 const initialState = {
+  login: {
+    success: true,
+  },
   user: null,
 };
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action = {}) => {
+  console.log('action', action);
   switch (action.type) {
     case actionTypes.LOGIN_REQUEST:
       return {
@@ -12,12 +16,16 @@ const userReducer = (state = initialState, action) => {
       };
     case actionTypes.LOGIN_SUCCESS:
       return {
-        ...state,
+        // ...state.login,
+        login: action.login,
         user: action.user,
       };
     case actionTypes.LOGOUT:
       return {
-        ...state,
+        // ...state,
+        login: {
+          success: false,
+        },
         user: null,
       };
     case actionTypes.REMOVE_USER:

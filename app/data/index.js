@@ -9,6 +9,8 @@
 // export {HomeTopicData} from './hometopic';
 // export {HomeListData} from './homelist';
 export {HomePopularData} from './homepopulars';
+export {MaterialRequestData} from './materialrequest';
+export {UserData} from './user';
 // export {HomeChannelData} from './homechannel';
 // export {PostListData, FPostListData, EPostProductData} from './post';
 // export {RecentListData} from './recentView';

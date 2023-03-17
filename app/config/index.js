@@ -2,6 +2,7 @@ import {BaseSetting} from './setting';
 import {Typography, FontWeight, FontFamily} from './typography';
 import {
   BaseColor,
+  DefaultTheme,
   useTheme,
   useFont,
   FontSupport,
@@ -20,6 +21,7 @@ export {
   FontSupport,
   ThemeSupport,
   DefaultFont,
+  DefaultTheme,
   BaseStyle,
   Typography,
   FontWeight,

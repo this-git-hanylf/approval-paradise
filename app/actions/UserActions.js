@@ -23,6 +23,8 @@ export const actionTypes = {
 
   // LOAD_LOTNO: 'LOAD_LOTNO'
 };
+export const LOGOUT = 'LOGOUT';
+export const LOGIN = 'LOGIN';
 
 const loginRequest = () => ({
   type: actionTypes.LOGIN_REQUEST,
@@ -33,8 +35,9 @@ const loginError = error => ({
   error,
 });
 
-const loginSuccess = user => ({
+const loginSuccess = (user, data) => ({
   type: actionTypes.LOGIN_SUCCESS,
+  login: data,
   user,
 });
 
@@ -89,7 +92,14 @@ export const login = (email, password, token_firebase) => async dispatch => {
   dispatch(loginRequest());
   try {
     const user = await UserController.login(email, password, token_firebase);
-    dispatch(loginSuccess(user.Data));
+    let data = {
+      success: true,
+    };
+    // user.Data.login = {success: true};
+    // console.log('user di useraction', user.Data.login);
+    // console.log('user Data di useraction', user.Data);
+    // user.push(data);
+    dispatch(loginSuccess(user.Data, data));
     console.log('userrrrr', user);
     // alert("JSON.stringify(user)");
   } catch (error) {

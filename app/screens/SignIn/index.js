@@ -14,17 +14,20 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import messaging from '@react-native-firebase/messaging';
 import {useTheme} from '@react-navigation/native';
+import {DefaultTheme} from '@config';
 import {TextInput, Icon, Button} from '@components';
 import SliderIntro from 'react-native-slider-intro';
 
 //selectors
-import getUser from '../../selectors/UserSelectors';
+// import getUser from '../../selectors/UserSelectors';
 
 //actions
 import {login, actionTypes} from '../../actions/UserActions';
 
 const SignIn = props => {
-  const {colors} = useTheme();
+  // const {colors} = useTheme();
+  const colors = DefaultTheme.light.colors;
+  console.log('colorssz', colors);
   const {navigation} = props;
   const {t} = useTranslation();
   const dispatch = useDispatch();
@@ -37,8 +40,9 @@ const SignIn = props => {
   const [token_firebase, setTokenFirebase] = useState('');
   const [token, setTokenBasic] = useState('');
 
-  const user = useSelector(state => getUser(state));
-  console.log('cek user di sign in', user);
+  // const user = useSelector(state => getUser(state));
+  const user = useSelector(state => state.user);
+  console.log('cek user di sign in', user.user);
 
   const passwordChanged = useCallback(value => setPassword(value), []);
   const emailChanged = useCallback(value => setEmail(value), []);
@@ -48,8 +52,8 @@ const SignIn = props => {
   }, []);
 
   useEffect(() => {
-    console.log('user for reset? ', user);
-    if (user != null) {
+    console.log('user for reset? ', user.user);
+    if (user.user != null) {
       // console.log('user', user);
 
       // loadProject();
