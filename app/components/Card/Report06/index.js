@@ -8,6 +8,7 @@ import styles from './styles';
 import {parseHexTransparency} from '@utils';
 
 const CardReport06 = ({
+  disable,
   title = '',
   price = '',
   icon = '',
@@ -20,9 +21,13 @@ const CardReport06 = ({
 }) => {
   //   const {colors} = DefaultTheme();
   // console.log('fontsize', font);
-
+  console.log('disable', disable);
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity
+      disabled={disable}
+      style={styles.container}
+      onPress={onPress}
+    >
       <View
         style={[
           styles.content,

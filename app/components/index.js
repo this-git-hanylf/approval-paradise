@@ -43,3 +43,7 @@ export {default as ProfilePerformance} from './Profile/Performance';
 // export {default as ProfileCall} from './Profile/Call';
 // export {default as ProfileGridSmall} from './Profile/GridSmall';
 // export {default as ProfileGrid} from './Profile/Grid';
+
+export {default as CardHistory} from './Card/History';
+
+export {default as CardHistoryDetail} from './Card/HistoryDetail';

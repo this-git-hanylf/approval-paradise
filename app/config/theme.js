@@ -235,24 +235,24 @@ export const DefaultFont = 'ProximaNova';
  * export theme and colors for application
  * @returns theme,colors
  */
-export const useTheme = () => {
-  // const isDarkMode = useDarkMode();
-  // const forceDark = useSelector(state => state.application.force_dark);
-  // console.log('forcedark?', forceDark);
-  // const themeStorage = useSelector(state => state.application.theme);
-  // console.log('theme storeage?', state.application);
-  // const listTheme = ThemeSupport.filter(item => item.theme == themeStorage);
-  // const theme = listTheme.length > 0 ? listTheme[0] : DefaultTheme;
-  // if (forceDark) {
-  //   return {theme: theme.dark, colors: theme.dark.colors};
-  // }
-  // if (forceDark == false) {
-  //   return {theme: theme.light, colors: theme.light.colors};
-  // }
-  // return isDarkMode
-  //   ? {theme: theme.dark, colors: theme.dark.colors}
-  //   : {theme: theme.light, colors: theme.light.colors};
-};
+// export const useTheme = () => {
+//   const isDarkMode = useDarkMode();
+//   const forceDark = useSelector(state => state.application.force_dark);
+//   console.log('forcedark?', forceDark);
+//   const themeStorage = useSelector(state => state.application.theme);
+//   console.log('theme storeage?', state.application);
+//   const listTheme = ThemeSupport.filter(item => item.theme == themeStorage);
+//   const theme = listTheme.length > 0 ? listTheme[0] : DefaultTheme;
+//   if (forceDark) {
+//     return {theme: theme.dark, colors: theme.dark.colors};
+//   }
+//   if (forceDark == false) {
+//     return {theme: theme.light, colors: theme.light.colors};
+//   }
+//   return isDarkMode
+//     ? {theme: theme.dark, colors: theme.dark.colors}
+//     : {theme: theme.light, colors: theme.light.colors};
+// };
 
 /**
  * export font for application

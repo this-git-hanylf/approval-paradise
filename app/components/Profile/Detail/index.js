@@ -5,7 +5,8 @@ import {BaseColor, useTheme, DefaultTheme} from '@config';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
-import styles from '../Author/styles';
+// import styles from '../Author/styles';
+import styles from './styles';
 
 export default function ProfileDetail(props) {
   // const {colors} = useTheme();

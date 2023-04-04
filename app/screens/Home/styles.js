@@ -1,4 +1,4 @@
-import {StyleSheet, Platform} from 'react-native';
+import {StyleSheet, Platform, useColorScheme} from 'react-native';
 import {BaseColor, Fonts} from '@config';
 import {useTheme, DefaultTheme, DarkTheme} from '@react-navigation/native';
 
@@ -13,8 +13,8 @@ export default StyleSheet.create({
     // borderBottomRightRadius: 40,
     // borderBottomLeftRadius: 40,
   },
+
   backgroundStyle: {
-    backgroundColor: '#FFFFFF',
     // backgroundColor: '#F7F7F7',
     height: '100%',
     width: '100%',

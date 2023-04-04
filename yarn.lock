@@ -726,10 +726,17 @@
     pirates "^4.0.5"
     source-map-support "^0.5.16"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.20.6", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.20.6", "@babel/runtime@^7.9.2":
   version "7.20.6"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.20.6.tgz"
   integrity sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
+"@babel/runtime@^7.12.1":
+  version "7.21.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
   dependencies:
     regenerator-runtime "^0.13.11"
 
@@ -1853,6 +1860,18 @@
     react-is "^16.13.0"
     use-latest-callback "^0.1.5"
 
+"@react-navigation/core@^6.4.8":
+  version "6.4.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-6.4.8.tgz#a18e106d3c59cdcfc4ce53f7344e219ed35c88ed"
+  integrity sha512-klZ9Mcf/P2j+5cHMoGyIeurEzyBM2Uq9+NoSFrF6sdV5iCWHLFhrCXuhbBiQ5wVLCKf4lavlkd/DDs47PXs9RQ==
+  dependencies:
+    "@react-navigation/routers" "^6.1.8"
+    escape-string-regexp "^4.0.0"
+    nanoid "^3.1.23"
+    query-string "^7.1.3"
+    react-is "^16.13.0"
+    use-latest-callback "^0.1.5"
+
 "@react-navigation/elements@^1.3.12":
   version "1.3.12"
   resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-1.3.12.tgz"
@@ -1872,6 +1891,13 @@
   version "6.1.6"
   resolved "https://registry.npmjs.org/@react-navigation/routers/-/routers-6.1.6.tgz"
   integrity sha512-Z5DeCW3pUvMafbU9Cjy1qJYC2Bvl8iy3+PfsB0DsAwQ6zZ3WAXW5FTMX4Gb9H+Jg6qHWGbMFFwlYpS3UJ3tlVQ==
+  dependencies:
+    nanoid "^3.1.23"
+
+"@react-navigation/routers@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-6.1.8.tgz#ae56b2678dbb5abca5bd7c95d6a8d1abc767cba2"
+  integrity sha512-CEge+ZLhb1HBrSvv4RwOol7EKLW1QoqVIQlE9TN5MpxS/+VoQvP+cLbuz0Op53/iJfYhtXRFd1ZAd3RTRqto9w==
   dependencies:
     nanoid "^3.1.23"
 
@@ -1963,11 +1989,6 @@
   resolved "https://registry.npmjs.org/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
-"@types/events@*":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
-  integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
-
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.npmjs.org/@types/graceful-fs/-/graceful-fs-4.1.5.tgz"
@@ -1982,7 +2003,7 @@
 
 "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
-  resolved "https://registry.npmjs.org/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
   integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
   dependencies:
     "@types/react" "*"
@@ -2045,13 +2066,6 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-native@*":
-  version "0.71.3"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.71.3.tgz#537f669ed6b38b5ae47444bd9d253c4cff23bed7"
-  integrity sha512-0Uqw1YZ0qbVla0MMWFTANFm6W8KYWNvGQmYfucdecbXivLMcQ2v4PovuYFKr7bE6Bc5nDCUEaga962Y8gcDF7A==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-native@^0.70.6":
   version "0.70.8"
   resolved "https://registry.npmjs.org/@types/react-native/-/react-native-0.70.8.tgz"
@@ -2092,7 +2106,7 @@
 
 "@types/use-sync-external-store@^0.0.3":
   version "0.0.3"
-  resolved "https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz"
+  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
   integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
 
 "@types/yargs-parser@*":
@@ -3811,11 +3825,6 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
-
-events@^3.0.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
-  integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
 exec-sh@^0.3.2:
   version "0.3.6"
@@ -6842,17 +6851,6 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-dark-mode@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/react-native-dark-mode/-/react-native-dark-mode-0.2.2.tgz#4faa335e36330bfca832ba8b3d2bd84c7b880381"
-  integrity sha512-2vhWOOimU7DRKYjCU/pdv0+JpnGKURq5+c7bre093Jtzk57HtlJfd+ViibbC9Y8zh0viIOyKtfL5mYhVhZ6Crw==
-  dependencies:
-    "@types/events" "*"
-    "@types/react" "*"
-    "@types/react-native" "*"
-    events "^3.0.0"
-    toolkit.ts "^0.0.2"
-
 react-native-fast-image@^8.6.3:
   version "8.6.3"
   resolved "https://registry.npmjs.org/react-native-fast-image/-/react-native-fast-image-8.6.3.tgz"
@@ -6996,7 +6994,7 @@ react-native@0.70.6:
 
 react-redux@^8.0.5:
   version "8.0.5"
-  resolved "https://registry.npmjs.org/react-redux/-/react-redux-8.0.5.tgz"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-8.0.5.tgz#e5fb8331993a019b8aaf2e167a93d10af469c7bd"
   integrity sha512-Q2f6fCKxPFpkXt1qNRZdEDLlScsDWyrgSj0mliK59qU6W5gvBiKkdMEG2lJzhd1rCctf0hb6EtePPLZ2e0m1uw==
   dependencies:
     "@babel/runtime" "^7.12.1"
@@ -8033,11 +8031,6 @@ toidentifier@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
-
-toolkit.ts@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/toolkit.ts/-/toolkit.ts-0.0.2.tgz#91bde730e5e6ad1a22146cdaf83f4a52721cf3b2"
-  integrity sha512-yJJTVbCwiD6AfFgReewJCGJuODmyZUeL1sDjnxp33t0UBxnezgQrLbz/F9++RC28CTlk5u5pVji4TbeondYEkw==
 
 tough-cookie@^4.0.0:
   version "4.1.2"

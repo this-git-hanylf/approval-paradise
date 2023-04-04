@@ -3,7 +3,7 @@ import Text from '@components/Text';
 import {useTheme, BaseColor} from '@config';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View, useColorScheme} from 'react-native';
 import styles from './styles';
 import {parseHexTransparency} from '@utils';
 
@@ -24,6 +24,7 @@ const CardVertical = ({
   req_no = '',
 }) => {
   //   const {colors} = useTheme();
+  const scheme = useColorScheme();
 
   return (
     <View style={[styles.cardList]}>
@@ -35,23 +36,38 @@ const CardVertical = ({
             alignItems: 'center',
           }}
         >
-          <View
-            style={{
-              marginRight: 20,
-              marginBottom: 10,
-              paddingVertical: 10,
-              paddingHorizontal: 10,
-              borderRadius: 10,
-              justifyContent: 'center',
-              backgroundColor: 'rgba(4, 132, 60, 0.10)',
-            }}
-          >
-            <Icon solid name={'times'} size={14} style={{color: '#007638'}} />
-          </View>
+          {scheme == 'dark' ? (
+            <View
+              style={{
+                marginRight: 20,
+                marginBottom: 10,
+                paddingVertical: 10,
+                paddingHorizontal: 10,
+                borderRadius: 10,
+                justifyContent: 'center',
+                backgroundColor: '#FFFFFF',
+              }}
+            >
+              <Icon solid name={'times'} size={14} style={{color: '#fc2d2d'}} />
+            </View>
+          ) : (
+            <View
+              style={{
+                marginRight: 20,
+                marginBottom: 10,
+                paddingVertical: 10,
+                paddingHorizontal: 10,
+                borderRadius: 10,
+                justifyContent: 'center',
+                backgroundColor: 'rgba(4, 132, 60, 0.10)',
+              }}
+            >
+              <Icon solid name={'times'} size={14} style={{color: '#fc2d2d'}} />
+            </View>
+          )}
           <Text
             bold
             style={{
-              color: '#000000',
               fontSize: 18,
               marginBottom: 10,
             }}
@@ -68,30 +84,190 @@ const CardVertical = ({
               alignItems: 'center',
             }}
           >
-            <View
-              style={{
-                marginRight: 20,
-                marginBottom: 10,
-                paddingVertical: 10,
-                paddingHorizontal: 10,
-                borderRadius: 10,
-                justifyContent: 'center',
-                backgroundColor: 'rgba(4, 132, 60, 0.10)',
-              }}
-            >
-              <Icon solid name={'check'} size={14} style={{color: '#007638'}} />
-            </View>
-            <Text
-              bold
-              style={{color: '#000000', fontSize: 18, marginBottom: 10}}
-            >
+            {scheme == 'dark' ? (
+              <View
+                style={{
+                  marginRight: 20,
+                  marginBottom: 10,
+                  paddingVertical: 10,
+                  paddingHorizontal: 10,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  backgroundColor: '#FFFFFF',
+                }}
+              >
+                <Icon
+                  solid
+                  name={'check'}
+                  size={14}
+                  style={{color: '#007638'}}
+                />
+              </View>
+            ) : (
+              <View
+                style={{
+                  marginRight: 20,
+                  marginBottom: 10,
+                  paddingVertical: 10,
+                  paddingHorizontal: 10,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  backgroundColor: 'rgba(4, 132, 60, 0.10)',
+                }}
+              >
+                <Icon
+                  solid
+                  name={'check'}
+                  size={14}
+                  style={{color: '#007638'}}
+                />
+              </View>
+            )}
+            <Text bold style={{fontSize: 18, marginBottom: 10}}>
               Approved
             </Text>
           </View>
         )) ||
-        (status == 'C' && null)
+        (status == 'C' && null) ||
+        (status == 'V' && (
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+            }}
+          >
+            {scheme == 'dark' ? (
+              <View
+                style={{
+                  marginRight: 20,
+                  marginBottom: 10,
+                  paddingVertical: 10,
+                  paddingHorizontal: 10,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  backgroundColor: '#FFFFFF',
+                }}
+              >
+                <Icon
+                  solid
+                  name={'check'}
+                  size={14}
+                  style={{color: '#007638'}}
+                />
+              </View>
+            ) : (
+              <View
+                style={{
+                  marginRight: 20,
+                  marginBottom: 10,
+                  paddingVertical: 10,
+                  paddingHorizontal: 10,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  backgroundColor: 'rgba(4, 132, 60, 0.10)',
+                }}
+              >
+                <Icon
+                  solid
+                  name={'undo'}
+                  size={14}
+                  style={{color: '#ff6f00'}}
+                />
+              </View>
+            )}
+            <Text bold style={{fontSize: 18, marginBottom: 10}}>
+              Revise
+            </Text>
+          </View>
+        ))
       )}
-      {status == 'C' ? null : (
+      {status == 'C' ? null : scheme == 'dark' ? (
+        <View
+          style={{
+            paddingVertical: 20,
+            borderRadius: 15,
+            backgroundColor: '#FFFFFF',
+          }}
+        >
+          <View
+            style={{
+              marginLeft: 20,
+              flexDirection: 'row',
+            }}
+          >
+            <Text style={{textAlign: 'left', color: '#015e2d', fontSize: 16}}>
+              Request By :{' '}
+            </Text>
+            <Text
+              style={{
+                textAlign: 'right',
+                color: '#015e2d',
+                fontSize: 16,
+              }}
+            >
+              {request}
+            </Text>
+          </View>
+          <View
+            style={{
+              marginLeft: 20,
+              marginTop: 15,
+              flexDirection: 'row',
+            }}
+          >
+            <Text style={{textAlign: 'left', color: '#015e2d', fontSize: 16}}>
+              Status :{' '}
+            </Text>
+            {status == 'R' ? (
+              <Text
+                style={{
+                  textAlign: 'right',
+                  color: '#015e2d',
+                  fontSize: 16,
+                }}
+              >
+                Pending
+              </Text>
+            ) : (
+              (status == 'P' && (
+                <Text
+                  style={{
+                    textAlign: 'right',
+                    color: '#015e2d',
+                    fontSize: 16,
+                  }}
+                >
+                  Approved
+                </Text>
+              )) ||
+              (status == 'C' && null)
+            )}
+          </View>
+
+          <View
+            style={{
+              marginLeft: 20,
+              marginTop: 15,
+              flexDirection: 'row',
+            }}
+          >
+            <Text style={{textAlign: 'left', color: '#015e2d', fontSize: 16}}>
+              Request No :{' '}
+            </Text>
+
+            <Text
+              style={{
+                textAlign: 'right',
+                color: '#015e2d',
+                fontSize: 16,
+              }}
+            >
+              {req_no}
+            </Text>
+          </View>
+        </View>
+      ) : (
         <View
           style={{
             paddingVertical: 20,
@@ -150,7 +326,18 @@ const CardVertical = ({
                   Approved
                 </Text>
               )) ||
-              (status == 'C' && null)
+              (status == 'C' && null) ||
+              (status == 'V' && (
+                <Text
+                  style={{
+                    textAlign: 'right',
+                    color: '#015e2d',
+                    fontSize: 16,
+                  }}
+                >
+                  Revise
+                </Text>
+              ))
             )}
           </View>
 

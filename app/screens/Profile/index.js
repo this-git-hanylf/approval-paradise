@@ -20,10 +20,10 @@ import styles from './styles';
 // import getUser from '../../selectors/UserSelectors';
 
 // const {authentication} = AuthActions;
-const {authentication} = UserAuth;
 
 const Profile = props => {
   // const {colors} = useTheme();
+  const {authentication} = UserAuth;
   const {t} = useTranslation();
   const {navigation} = props;
   const dispatch = useDispatch();
@@ -145,7 +145,7 @@ const Profile = props => {
               </TouchableOpacity>
             )}
 
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={styleItem}
               onPress={() => {
                 navigation.navigate('ContactUs');
@@ -159,8 +159,9 @@ const Profile = props => {
                 style={{marginLeft: 5}}
                 enableRTL={true}
               />
-            </TouchableOpacity>
-            <TouchableOpacity
+            </TouchableOpacity> */}
+
+            {/* <TouchableOpacity
               style={styleItem}
               onPress={() => {
                 navigation.navigate('AboutUs');
@@ -174,7 +175,7 @@ const Profile = props => {
                 style={{marginLeft: 5}}
                 enableRTL={true}
               />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </ScrollView>
       </View>

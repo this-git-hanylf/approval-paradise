@@ -121,12 +121,14 @@ const Navigator = props => {
     // <AppearanceProvider>
     <NavigationContainer
       ref={navigationRef}
-      theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      theme={scheme === 'dark' ? DarkTheme : DefaultTheme}
+    >
       <RootStack.Navigator
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={initialRoute}>
+        initialRouteName={initialRoute}
+      >
         {loading ? (
           <RootStack.Screen name="Loading" component={Loading} />
         ) : user == null || user == '' || user == 0 ? (

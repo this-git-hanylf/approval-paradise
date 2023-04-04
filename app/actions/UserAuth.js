@@ -24,7 +24,13 @@ const onLogin = data => {
     login: data,
   };
 };
-
+const removeData = data_dll => {
+  return {
+    type: actionTypes.DELETE,
+    load: {success: false},
+    data: null,
+  };
+};
 export const authentication = (login, callback) => dispatch => {
   console.log('login di userauth', login);
   console.log('callback di userauth', callback);
@@ -33,7 +39,27 @@ export const authentication = (login, callback) => dispatch => {
     let data = {
       success: login,
     };
+    let data_dll = {
+      data: null,
+      load: {success: false},
+    };
     dispatch(onLogin(data));
+    dispatch(removeData(data_dll));
+    if (typeof callback === 'function') {
+      callback({success: true});
+    }
+  }, 500);
+};
+export const remove = (login, callback) => dispatch => {
+  console.log('login di userauth', login);
+  console.log('callback di userauth', callback);
+  //call api and dispatch action case
+  setTimeout(() => {
+    let data_dll = {
+      data: null,
+      load: {success: false},
+    };
+    dispatch(removeData(data_dll));
     if (typeof callback === 'function') {
       callback({success: true});
     }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import {View, TouchableOpacity, Switch, ScrollView} from 'react-native';
-import {BaseStyle, useTheme} from '@config';
+import {BaseStyle, useTheme, DefaultTheme} from '@config';
 import {BaseSetting} from '@config';
 import {Header, SafeAreaView, Icon, Text} from '@components';
 import {useTranslation} from 'react-i18next';
@@ -10,7 +10,8 @@ import styles from './styles';
 
 export default function Setting({navigation}) {
   const {t, i18n} = useTranslation();
-  const {colors} = useTheme();
+  // const {colors} = useTheme();
+  const colors = DefaultTheme.light.colors;
   const forceDark = useSelector(state => state.application.force_dark);
   const font = useSelector(state => state.application.font);
 
@@ -32,7 +33,8 @@ export default function Setting({navigation}) {
   return (
     <SafeAreaView
       style={BaseStyle.safeAreaView}
-      edges={['right', 'top', 'left']}>
+      edges={['right', 'top', 'left']}
+    >
       <Header
         title={t('setting')}
         renderLeft={() => {
@@ -60,13 +62,15 @@ export default function Setting({navigation}) {
           ]}
           onPress={() => {
             // navigation.navigate("ChangeLanguage");
-          }}>
+          }}
+        >
           <Text body1>{t('language')}</Text>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-            }}>
+            }}
+          >
             <Text body1 grayColor>
               {Utils.languageFromCode(i18n.language)}
             </Text>
@@ -88,8 +92,9 @@ export default function Setting({navigation}) {
             },
           ]}
           onPress={() => {
-            navigation.navigate('ThemeSetting');
-          }}>
+            // navigation.navigate('ThemeSetting');
+          }}
+        >
           <Text body1>{t('theme')}</Text>
           <View style={[styles.themeIcon, {backgroundColor: colors.primary}]} />
         </TouchableOpacity>
@@ -101,13 +106,15 @@ export default function Setting({navigation}) {
               borderBottomWidth: 1,
             },
           ]}
-          onPress={() => navigation.navigate('SelectFontOption')}>
+          // onPress={() => navigation.navigate('SelectFontOption')}
+        >
           <Text body1>{t('font')}</Text>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-            }}>
+            }}
+          >
             <Text body1 grayColor>
               {font ?? t('default')}
             </Text>
@@ -129,14 +136,16 @@ export default function Setting({navigation}) {
             },
           ]}
           onPress={() => {
-            navigation.navigate('SelectDarkOption');
-          }}>
+            // navigation.navigate('SelectDarkOption');
+          }}
+        >
           <Text body1>{t('dark_theme')}</Text>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-            }}>
+            }}
+          >
             <Text body1 grayColor>
               {darkOption}
             </Text>
@@ -149,7 +158,7 @@ export default function Setting({navigation}) {
             />
           </View>
         </TouchableOpacity>
-        <View
+        {/* <View
           style={[
             styles.profileItem,
             {
@@ -157,10 +166,11 @@ export default function Setting({navigation}) {
               borderBottomWidth: 1,
             },
             {paddingVertical: 15},
-          ]}>
+          ]}
+        >
           <Text body1>{t('notification')}</Text>
           <Switch size={18} onValueChange={toggleSwitch} value={reminders} />
-        </View>
+        </View> */}
         <View style={styles.profileItem}>
           <Text body1>{t('app_version')}</Text>
           <Text body1 grayColor>

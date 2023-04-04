@@ -292,5 +292,8 @@
   "select_category": "Select Category",
   "status": "Status",
   "terms_conditions": "Terms & Conditions",
-  "house_roles": "House Rules"
+  "house_roles": "House Rules",
+  "history_detail": "History Detail",
+  "approve_detail": "Approve Detail",
+  "unapprove_detail": "Unapprove Detail"
 }

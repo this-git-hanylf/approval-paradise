@@ -15,7 +15,7 @@ enableScreens(false);
 
 Utils.setupLayoutAnimation();
 
-const AppTuansing = () => {
+const AppApprovalPaku = () => {
   //   const firebaseConfig = {};
 
   //   if (firebase.apps.length === 0) {
@@ -35,4 +35,4 @@ const AppTuansing = () => {
   );
 };
 
-export default AppTuansing;
+export default AppApprovalPaku;

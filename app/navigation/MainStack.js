@@ -13,6 +13,16 @@ import HomeScreen from '../screens/Home';
 import HistoryScreen from '../screens/History';
 import ProfileScreen from '../screens/Profile';
 import Setting from '../screens/Setting';
+import ThemeSetting from '../screens/ThemeSetting';
+import SelectFontOption from '../screens/SelectFontOption';
+import ProfileEdit from '../screens/ProfileEdit';
+import HistoryDetail from '../screens/HistoryDetail';
+import Approved from '../screens/Approved';
+import Unapproved from '../screens/Unapproved';
+import SearchHistory from '../screens/SearchHistory';
+import SearchApproved from '../screens/SearchApproved';
+import SearchUnapproved from '../screens/SearchUnapproved';
+import ChangePassword from '../screens/ChangePassword';
 // import AboutUs from '../screens/About';
 // import AboutScreen from '../screens/About';
 
@@ -68,20 +78,65 @@ export const WalletTabScreens = {
 function MainStack() {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{headerShown: false}}
-        creenOptions={{presentation: 'modal'}}
-      /> */}
       <Stack.Screen
-        name="Menu"
+        name="Home"
         component={WalletMenu}
         options={{headerShown: false}}
       ></Stack.Screen>
+
       <Stack.Screen
         name="Setting"
         component={Setting}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="ThemeSetting"
+        component={ThemeSetting}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="SelectFontOption"
+        component={SelectFontOption}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="ProfileEdit"
+        component={ProfileEdit}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="HistoryDetail"
+        component={HistoryDetail}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="Approved"
+        component={Approved}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="Unapproved"
+        component={Unapproved}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="SearchHistory"
+        component={SearchHistory}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="SearchApproved"
+        component={SearchApproved}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="SearchUnapproved"
+        component={SearchUnapproved}
+        options={{headerShown: false}}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="ChangePassword"
+        component={ChangePassword}
         options={{headerShown: false}}
       ></Stack.Screen>
     </Stack.Navigator>

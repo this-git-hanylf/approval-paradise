@@ -8,6 +8,7 @@ import {
   Platform,
   Text,
   Alert,
+  useColorScheme,
 } from 'react-native';
 import styles from './styles';
 import {useSelector, useDispatch} from 'react-redux';
@@ -25,9 +26,7 @@ import SliderIntro from 'react-native-slider-intro';
 import {login, actionTypes} from '../../actions/UserActions';
 
 const SignIn = props => {
-  // const {colors} = useTheme();
-  const colors = DefaultTheme.light.colors;
-  console.log('colorssz', colors);
+  const {colors} = useTheme();
   const {navigation} = props;
   const {t} = useTranslation();
   const dispatch = useDispatch();
@@ -36,13 +35,10 @@ const SignIn = props => {
   const [password, setPassword] = useState('');
   const [hidePass, setHidePass] = useState(true);
   const [intro, setIntro] = useState(false);
-
   const [token_firebase, setTokenFirebase] = useState('');
   const [token, setTokenBasic] = useState('');
-
-  // const user = useSelector(state => getUser(state));
+  const scheme = useColorScheme();
   const user = useSelector(state => state.user);
-  console.log('cek user di sign in', user.user);
 
   const passwordChanged = useCallback(value => setPassword(value), []);
   const emailChanged = useCallback(value => setEmail(value), []);
@@ -117,7 +113,7 @@ const SignIn = props => {
       text: 'Get detailed info about your currently approved document.',
       image: require('@assets/images/slide-02.png'),
       // imageStyle: styles.images_waskita,
-      backgroundColor: colors.text,
+      backgroundColor: colors.primary,
       // width: 200,
       // height: 200,
       // bottomSpacer: styles.bottom_Spacer,
@@ -187,23 +183,43 @@ const SignIn = props => {
       edges={['right', 'top', 'left']}
     >
       <View>
-        <Image
-          // source={require('../../assets/images/pakubuwono.png')}
-          source={require('../../assets/images/image-home/pakubuwono.png')}
-          style={{
-            height: 100,
-            width: 200,
-            alignSelf: 'center',
-            resizeMode: 'contain',
-            borderWidth: 1,
-            borderStyle: 'solid',
-            // borderColor: 'black',
-            // marginHorizontal: 100,
-            // marginBottom: 15,
-            // marginTop: -15,
-            // flexDirection: 'row',
-          }}
-        />
+        {scheme == 'dark' ? (
+          <Image
+            // source={require('../../assets/images/pakubuwono.png')}
+            source={require('../../assets/images/image-home/vector-logo-pbi.png')}
+            style={{
+              height: 100,
+              width: 200,
+              alignSelf: 'center',
+              resizeMode: 'contain',
+              borderWidth: 1,
+              borderStyle: 'solid',
+              // borderColor: 'black',
+              // marginHorizontal: 100,
+              // marginBottom: 15,
+              // marginTop: -15,
+              // flexDirection: 'row',
+            }}
+          />
+        ) : (
+          <Image
+            // source={require('../../assets/images/pakubuwono.png')}
+            source={require('../../assets/images/image-home/pakubuwono.png')}
+            style={{
+              height: 100,
+              width: 200,
+              alignSelf: 'center',
+              resizeMode: 'contain',
+              borderWidth: 1,
+              borderStyle: 'solid',
+              // borderColor: 'black',
+              // marginHorizontal: 100,
+              // marginBottom: 15,
+              // marginTop: -15,
+              // flexDirection: 'row',
+            }}
+          />
+        )}
       </View>
       {/* <View
         style={{

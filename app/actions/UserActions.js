@@ -1,4 +1,7 @@
+import {async} from '@firebase/util';
+import {err} from 'react-native-svg/lib/typescript/xml';
 import UserController from '../controllers/UserController';
+import axios from 'axios';
 
 export const actionTypes = {
   LOGIN: 'LOGIN',
@@ -21,10 +24,19 @@ export const actionTypes = {
 
   REMOVE_USER: 'REMOVE_USER',
 
+  DATA_REQUEST: 'DATA_REQUEST',
+  DATA_SUCCESS_REQUEST: 'DATA_SUCCESS_REQUEST',
+  DATA_SUCCESS_APPROVE: 'DATA_SUCCESS_APPROVE',
+  DATA_SUCCESS_CLOSE: 'DATA_SUCCESS_CLOSE',
+  DATA_ERROR: 'DATA_ERROR',
+  DELETE: 'DELETE',
+  UPDATE_DATA: 'UPDATE_DATA',
+
   // LOAD_LOTNO: 'LOAD_LOTNO'
 };
 export const LOGOUT = 'LOGOUT';
 export const LOGIN = 'LOGIN';
+export const DELETE = 'DELETE';
 
 const loginRequest = () => ({
   type: actionTypes.LOGIN_REQUEST,
@@ -83,10 +95,82 @@ const removeUser = user => ({
   user: null,
 });
 
-// const loadLotno = user => ({
-//   type: actionTypes.LOAD_LOTNO,
-//   user,
-// });
+const dataRequest = () => ({
+  type: actionTypes.DATA_REQUEST,
+});
+
+const dataError = error => ({
+  type: actionTypes.DATA_ERROR,
+  load: {
+    success: false,
+  },
+  data: null,
+  error: error,
+});
+
+const dataSuccessRequest = (load, data) => ({
+  type: actionTypes.DATA_SUCCESS_REQUEST,
+  load,
+  data,
+});
+const dataSuccessApprove = (load, data) => ({
+  type: actionTypes.DATA_SUCCESS_APPROVE,
+  load,
+  data,
+});
+const dataSuccessClose = (load, data) => ({
+  type: actionTypes.DATA_SUCCESS_CLOSE,
+  load,
+  data,
+});
+
+const dataDelete = (load, data) => ({
+  type: actionTypes.DELETE,
+  load,
+  data: data,
+});
+
+const dataUpdate = (load, data) => ({
+  type: actionTypes.UPDATE_DATA,
+  data: data,
+  load,
+});
+
+export const getdata = status => async dispatch => {
+  console.log('status di user action', status);
+  dispatch(dataRequest());
+  try {
+    await axios
+      .get(
+        `http://dev.ifca.co.id:8080/apiifcares/api/getapproval_mobile/${status}`,
+      )
+      .then(result => {
+        let load = {
+          success: true,
+        };
+        const pasing = result.data.Data;
+        console.log('pasing di useraction', pasing);
+        if (pasing.length !== 0) {
+          console.log('first result', pasing[0].status);
+          if (pasing[0].status == 'C') {
+            dispatch(dataSuccessClose(load, pasing));
+          } else if (pasing[0].status == 'R') {
+            dispatch(dataSuccessRequest(load, pasing));
+          } else if (pasing[0].status == 'P') {
+            dispatch(dataSuccessApprove(load, pasing));
+          }
+        } else {
+          console.log('User Action Null');
+        }
+      })
+      .catch(error => console.log(error.response.data));
+    // .finally(() => );
+  } catch (error) {
+    alert(error);
+    console.log('ini konsol eror data', error);
+    dispatch(dataError(error));
+  }
+};
 
 export const login = (email, password, token_firebase) => async dispatch => {
   dispatch(loginRequest());
