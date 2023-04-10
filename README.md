@@ -46,3 +46,25 @@ $ build-android-release
 ```
 $ build-aab-release
 ```
+
+
+# Troubleshooting
+> for RN 70 error AxiosError: Network Error 
+- solve :
+- android:usesCleartextTraffic="true"
+- android/app/src/main/AndroidManifest.xml
+
+> useTheme() in @react-navigation/native
+```
+const DefaultTheme: Theme = {
+  dark: false,
+  colors: {
+    primary: 'rgb(0, 118, 56)',
+    background: 'rgb(242, 242, 242)',
+    card: 'rgb(255, 255, 255)',
+    text: 'rgb(28, 28, 30)',
+    border: 'rgb(216, 216, 216)',
+    notification: 'rgb(255, 59, 48)',
+  },
+};
+```
