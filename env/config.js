@@ -1,1 +1,1 @@
-export const BaseUrlAPI = 'http://apps.pakubuwono-residence.com/apiwebpbi/api';
+export const BaseUrlAPI = 'http://dev.ifca.co.id:8080/apiparadise/api';
